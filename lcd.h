@@ -11,7 +11,5 @@ void initLCD(void);
 void clearLCD(void);
 void moveCursorLCD(unsigned char x, unsigned char y);
 void printCharLCD(char c);
-void printStringLCD(const char* s);
+void printStringLCD(const char* a);
 void testLCD();
-void writeCHAR(unsigned char c);
-void LCDShift(void);

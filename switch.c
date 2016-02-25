@@ -14,13 +14,19 @@
 #define ENABLED 1
 #define DISABLED 0
 
-void initSW1(){
-    TRISDbits.TRISD6 = INPUT;           // Configure switch as input
-    CNCONDbits.ON = 1;                  // Enable overall interrupt
-    CNENDbits.CNIED6 = ENABLED;         // Enable pin CN
-    CNPUDbits.CNPUD6 = ENABLED;         // Enable pull-up resistor
-    IFS1bits.CNDIF = 0;                 // Put down the flag
-    IPC8bits.CNIP = 2;                  // Configure interrupt priority
-    IPC8bits.CNIS = 3;                  // Configure the interrupt sub-priority
-    IEC1bits.CNDIE = ENABLED;           // Enable interrupt for D pins
+void initSW(){
+    TRISDbits.TRISD5 = 1; // J10 Pin 13
+    CNCONDbits.ON = 1;
+    CNENDbits.CNIED5 = 1;
+    CNPUDbits.CNPUD5 = 1;
+    IFS1bits.CNDIF = 0;
+    IPC8bits.CNIP = 7;
+    IEC1bits.CNDIE = 1; 
+    TRISDbits.TRISD6 = 1; // J10 Pin 13
+    CNENDbits.CNIED6 = 1;
+    CNPUDbits.CNPUD6 = 1;
+    TRISGbits.TRISG12 = 0; //J10 Pin 1
+    TRISGbits.TRISG15 = 0; //J10 Pin 3
+    TRISDbits.TRISD0 = 0;
+    
 }
